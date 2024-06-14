@@ -4,7 +4,7 @@ import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 const firebaseConfig = {
   apiKey: "AIzaSyD5FqgkNK3svS0MI4wIJPjTwjbjJozPZ6o",
-  authDomain: "test-81e02.firebaseapp.com",
+  authDomain: process.env.REACT_APP_AUTHRIZED_DOMAIN,
   projectId: "test-81e02",
   storageBucket: "test-81e02.appspot.com",
   messagingSenderId: "524731383805",
