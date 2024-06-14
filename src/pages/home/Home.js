@@ -30,7 +30,7 @@ export const Home = () => {
     } else {
       setErrors({});
       setIsJDModalOpen(false)
-      setDescription(description)
+      setDescription(tempDescription)
     }
   }
 
@@ -51,6 +51,7 @@ export const Home = () => {
       setIsCVModalOpen(true)
       setErrors({})
     }
+    console.log(description.length)
   }
   const handleButtonClick = () => {
     fileInputRef.current.click();
@@ -152,10 +153,10 @@ export const Home = () => {
           <div className='w-full flex'>
             <div className='max-w-[250px] mx-auto'>
               <button 
-                className={`mx-auto py-[17.5px] px-[16px] w-[240px] h-[107px] ${!description.length>300? "bg-secondBg" : "bg-gradient-to-b from-darkgreen to-green"}  text-white text-3xl my-6`}
+                className={`mx-auto py-[17.5px] px-[16px] w-[240px] h-[107px] ${description === "" ? "bg-secondBg" : "bg-gradient-to-b from-darkgreen to-green"}  text-white text-3xl my-6`}
                 onClick={() => onClickOpenModal("jd")}
               >
-                {!description.length>300? 'Paste your job description':'Job Description Pasted!'}
+                {!description? 'Paste your job description':'Job Description Pasted!'}
               </button>
               <button
                 className={`mx-auto py-[17.5px] px-[16px] w-[240px] h-[107px] items-center ${!file ? "bg-secondBg" : "bg-gradient-to-b from-darkgreen to-green"}  text-white text-3xl my-6`}
